@@ -1,0 +1,42 @@
+{
+  "scenario_id": "contradiction_Q10",
+  "kind": "add_contradiction",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "24dccbb7fcbf728ba54a65628e9a213b45b411c61c15d7c5d8bf284de2240eaf",
+  "expected_statuses": {
+    "Q10": "both"
+  },
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "specification": {
+    "scenario_id": "contradiction_Q10",
+    "question_id": "Q10",
+    "kind": "add_contradiction",
+    "source_type": "system_log",
+    "new_text": "Независимый серверный журнал утверждает: публикация B18 произошла в 18:18:00, а отметка 18:24:00 относится к этой же операции ошибочно; причина расхождения журналов не установлена.",
+    "claim_status": "disputed",
+    "metadata": {
+      "path": [
+        0,
+        2,
+        0
+      ],
+      "occurred_at": "2026-03-14T18:18:00+03:00",
+      "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+    },
+    "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+    "gold_status": "both",
+    "gold_answer": "Время публикации спорное: исходный журнал указывает 18:24:00, новый журнал — 18:18:00. В отличие от исходного досье, теперь конфликтуют технические источники без установленного приоритета.",
+    "gold_evidence_ids": [
+      "C35",
+      "C41"
+    ],
+    "gold_counterevidence_ids": [
+      "C07",
+      "C30"
+    ],
+    "claim_text": "По альтернативному серверному журналу публикация B18 произошла в 18:18:00, а не в 18:24:00."
+  },
+  "assistant_reviewed": true,
+  "review_note": "Assistant checked logic and format; human review is not claimed"
+}

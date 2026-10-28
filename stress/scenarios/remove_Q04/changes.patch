@@ -1,0 +1,7 @@
+--- baseline/D02
++++ remove_Q04/D02
+@@ -3,3 +3,3 @@
+ 17:50:00 | event=queue_create | actor=vera | job=J18 | package=B18 | scheduled_at=18:24:00 | result=accepted
+-18:10:00 | event=login | actor=mira | result=success
++18:10:00 | event=login | result=success
+ 18:12:00 | event=role_assign | subject=mira | role=observer | result=success

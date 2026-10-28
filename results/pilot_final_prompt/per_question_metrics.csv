@@ -1,0 +1,4 @@
+mode,question_id,status_correct,evidence_precision,evidence_recall,evidence_f1,counterevidence_recall,both_correct,insufficient_correct,confident_when_insufficient,input_tokens,output_tokens,elapsed_seconds,valid
+A,Q01,False,0.0,0.0,0.0,,,,,21716,53,36.871033958974294,False
+B,Q01,False,1.0,1.0,1.0,,,,,2584,131,5.120775834016968,True
+C,Q01,False,1.0,1.0,1.0,,,,,2653,171,5.759164207964204,True

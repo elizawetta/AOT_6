@@ -1,0 +1,41 @@
+{
+  "scenario_id": "unverified_Q12",
+  "kind": "add_unverified_control",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "d1249b290e84c4f6200a24ec475c4ed51f006f9107246ecbf7a72af2e71c3777",
+  "expected_statuses": {
+    "Q12": "insufficient"
+  },
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "specification": {
+    "scenario_id": "unverified_Q12",
+    "question_id": "Q12",
+    "kind": "add_unverified_control",
+    "source_type": "statement",
+    "new_text": "Анонимное сообщение: «Говорят, S17 запустила Мира». Автор прямо указывает, что сам операцию не наблюдал и передаёт неподтверждённый слух.",
+    "claim_status": "reported",
+    "metadata": {
+      "path": [
+        1,
+        1,
+        1
+      ],
+      "occurred_at": "2026-03-14T18:28:30+03:00",
+      "rationale": "Сообщение отсылает к той же операции восстановления S17; её временная точка известна из журнала, но личность оператора этим не подтверждается."
+    },
+    "factor": "Добавлен один неподтверждённый пересказ версии о физическом операторе.",
+    "gold_status": "insufficient",
+    "gold_answer": "Физический оператор независимо не установлен. Самоотчёт Миры и анонимный слух не заменяют персональную аутентификацию или независимую запись операции. Нужны проверяемые сведения о человеке за пультом.",
+    "gold_evidence_ids": [
+      "C10",
+      "C15",
+      "C32",
+      "C41"
+    ],
+    "gold_counterevidence_ids": [],
+    "claim_text": "Анонимный автор пересказывает неподтверждённый слух о том, что S17 запустила Мира."
+  },
+  "assistant_reviewed": true,
+  "review_note": "Assistant checked logic and format; human review is not claimed"
+}

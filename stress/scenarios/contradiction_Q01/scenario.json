@@ -1,0 +1,40 @@
+{
+  "scenario_id": "contradiction_Q01",
+  "kind": "add_contradiction",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "adafccf2e46095f30186bc201cd7b0e9e9c385bd917e4d30b18bff64bea75b7f",
+  "expected_statuses": {
+    "Q01": "both"
+  },
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "specification": {
+    "scenario_id": "contradiction_Q01",
+    "question_id": "Q01",
+    "kind": "add_contradiction",
+    "source_type": "system_log",
+    "new_text": "Независимый журнал той же системы утверждает: успешного входа mira в 18:10:00 не было; причина расхождения с основным журналом не установлена.",
+    "claim_status": "disputed",
+    "metadata": {
+      "path": [
+        0,
+        2,
+        0
+      ],
+      "occurred_at": "2026-03-14T18:10:00+03:00",
+      "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+    },
+    "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+    "gold_status": "both",
+    "gold_answer": "Основной журнал указывает 18:10:00, альтернативный журнал отрицает вход в этот момент. Противоречие не разрешено; однозначное время входа по этим источникам установить нельзя.",
+    "gold_evidence_ids": [
+      "C01"
+    ],
+    "gold_counterevidence_ids": [
+      "C41"
+    ],
+    "claim_text": "Альтернативный журнал отрицает успешный вход mira в 18:10:00."
+  },
+  "assistant_reviewed": true,
+  "review_note": "Assistant checked logic and format; human review is not claimed"
+}

@@ -1,0 +1,5 @@
+pydantic>=2,<3
+pandas>=2,<3
+rank-bm25==0.2.2
+pytest>=8,<9
+streamlit>=1.40,<2

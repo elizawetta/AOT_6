@@ -1,0 +1,4 @@
+mode,status_accuracy,evidence_precision,evidence_recall,evidence_f1,counterevidence_recall,both_recall,insufficient_recall,confident_when_insufficient,mean_input_tokens,mean_output_tokens,mean_seconds,valid_response_rate,completed_questions
+A,0.0,0.0,0.0,0.0,,,,,21716.0,53.0,36.871033958974294,0.0,1
+B,0.0,1.0,1.0,1.0,,,,,2584.0,131.0,5.120775834016968,1.0,1
+C,0.0,1.0,1.0,1.0,,,,,2653.0,171.0,5.759164207964204,1.0,1

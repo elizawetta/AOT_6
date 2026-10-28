@@ -1,0 +1,12 @@
+{
+  "backend": "mlx",
+  "model": "mlx-community/Qwen2.5-3B-Instruct-4bit",
+  "revision": "4f83f8f146fdf28b512a06562b671d7af4fab457",
+  "model_path": "../nlp_lab3/.cache/huggingface/hub/models--mlx-community--Qwen2.5-3B-Instruct-4bit/snapshots/4f83f8f146fdf28b512a06562b671d7af4fab457",
+  "temperature": 0.0,
+  "seed": 42,
+  "max_output_tokens": 700,
+  "max_context_tokens": 32768,
+  "timeout_seconds": 180,
+  "python_executable": "../nlp_lab3/.venv/bin/python"
+}

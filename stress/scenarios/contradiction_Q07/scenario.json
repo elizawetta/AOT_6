@@ -1,0 +1,43 @@
+{
+  "scenario_id": "contradiction_Q07",
+  "kind": "add_contradiction",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "ac9025a3aa3cc2ee7b5af83681dd85eaa94a199bd9d0feda2d6e04bdb48d3f02",
+  "expected_statuses": {
+    "Q07": "both"
+  },
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "specification": {
+    "scenario_id": "contradiction_Q07",
+    "question_id": "Q07",
+    "kind": "add_contradiction",
+    "source_type": "policy",
+    "new_text": "Равноправная архивная копия E04 утверждает: восстановление S17 назначенным оператором без личной роли publisher запрещено; остальные условия совпадают, приоритет одной копии не установлен.",
+    "claim_status": "disputed",
+    "metadata": {
+      "path": [
+        2,
+        2,
+        2
+      ],
+      "occurred_at": null,
+      "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+    },
+    "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+    "gold_status": "both",
+    "gold_answer": "Копии E04 несовместимы: исходная допускает резервное восстановление без личной роли publisher, альтернативная запрещает его без этой роли. Приоритет копии не установлен.",
+    "gold_evidence_ids": [
+      "C17",
+      "C20",
+      "C24",
+      "C26"
+    ],
+    "gold_counterevidence_ids": [
+      "C41"
+    ],
+    "claim_text": "По альтернативной копии E04 восстановление S17 без личной роли publisher запрещено."
+  },
+  "assistant_reviewed": true,
+  "review_note": "Assistant checked logic and format; human review is not claimed"
+}

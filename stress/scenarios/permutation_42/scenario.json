@@ -1,0 +1,49 @@
+{
+  "scenario_id": "permutation_42",
+  "kind": "permutation",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "ff0e3c2aa9da366a93e472e574db1441ec09ad8dc328fc681557f0a521f0eba1",
+  "expected_statuses": {
+    "Q01": "entailed",
+    "Q02": "entailed",
+    "Q03": "entailed",
+    "Q04": "contradicted",
+    "Q05": "contradicted",
+    "Q06": "entailed",
+    "Q07": "entailed",
+    "Q08": "contradicted",
+    "Q09": "both",
+    "Q10": "contradicted",
+    "Q11": "insufficient",
+    "Q12": "insufficient"
+  },
+  "random_state": 42,
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "original_document_order": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10"
+  ],
+  "changed_document_order": [
+    "D09",
+    "D02",
+    "D06",
+    "D01",
+    "D08",
+    "D03",
+    "D10",
+    "D05",
+    "D04",
+    "D07"
+  ],
+  "factor": "Изменён только порядок документов; тексты, утверждения, метаданные и эталоны сохранены.",
+  "assistant_reviewed": true
+}

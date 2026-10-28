@@ -1,0 +1,48 @@
+{
+  "created_at": "2026-10-27T13:59:10.580082+00:00",
+  "python": "3.11.9 (v3.11.9:de54cf5be3, Apr  2 2024, 07:12:50) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "packages": {
+    "pydantic": "2.14.1",
+    "pandas": "2.3.3",
+    "rank-bm25": "0.2.2",
+    "mlx-lm": null,
+    "mlx": null
+  },
+  "model_config": {
+    "backend": "mlx",
+    "model": "mlx-community/Qwen2.5-3B-Instruct-4bit",
+    "revision": "4f83f8f146fdf28b512a06562b671d7af4fab457",
+    "model_path": "../nlp_lab3/.cache/huggingface/hub/models--mlx-community--Qwen2.5-3B-Instruct-4bit/snapshots/4f83f8f146fdf28b512a06562b671d7af4fab457",
+    "temperature": 0.0,
+    "seed": 42,
+    "max_output_tokens": 700,
+    "max_context_tokens": 32768,
+    "timeout_seconds": 180,
+    "python_executable": "../nlp_lab3/.venv/bin/python"
+  },
+  "system_prompt_sha256": "9c58b32297b2a8c619dabd040d81210c6111e2dc7092a9615193fe6f31eb1e0f",
+  "dataset_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "document_order": [
+    "D01",
+    "D02",
+    "D03",
+    "D04",
+    "D05",
+    "D06",
+    "D07",
+    "D08",
+    "D09",
+    "D10"
+  ],
+  "scenario": {
+    "scenario_id": "baseline",
+    "human_reviewed": true,
+    "review_source": "User confirmed dossier, claims and gold answers in this chat before implementation"
+  },
+  "requested_cases": 3,
+  "execution_requested": true,
+  "completed": false,
+  "semantic_response_review": "not performed",
+  "timing": "Per-request generation, excluding model load and file writes; input prefill included; no forced cold cache"
+}

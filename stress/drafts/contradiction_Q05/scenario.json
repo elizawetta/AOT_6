@@ -1,0 +1,14 @@
+{
+  "scenario_id": "contradiction_Q05",
+  "kind": "add_contradiction",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "728cf843015d36b66f2ee4cbc7de3d309fb158016e8aa4a293d3b442309b6c68",
+  "expected_statuses": {
+    "Q05": "both"
+  },
+  "added_document_id": "D11",
+  "added_claim_id": "C41",
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "review_warning": "Проверить достаточность новых оснований и отсутствие приоритета; не считать ожидаемый переход автоматически доказанным."
+}

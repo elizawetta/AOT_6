@@ -1,0 +1,4 @@
+-r requirements.txt
+mlx-lm==0.31.3
+mlx==0.32.2
+transformers==5.17.0

@@ -1,0 +1,41 @@
+{
+  "scenario_id": "contradiction_Q06",
+  "kind": "add_contradiction",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "5637f550c4eabd1e637a161424eb268208afd30556d35c10a3431ae8c42da5ed",
+  "expected_statuses": {
+    "Q06": "both"
+  },
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "specification": {
+    "scenario_id": "contradiction_Q06",
+    "question_id": "Q06",
+    "kind": "add_contradiction",
+    "source_type": "system_log",
+    "new_text": "Альтернативная запись той же успешной проверки лобби с S17 указывает 18:31:00 вместо 18:29:10; причина расхождения двух отметок не установлена.",
+    "claim_status": "disputed",
+    "metadata": {
+      "path": [
+        0,
+        2,
+        2
+      ],
+      "occurred_at": "2026-03-14T18:31:00+03:00",
+      "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+    },
+    "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+    "gold_status": "both",
+    "gold_answer": "Порядок спорный: отметка проверки 18:29:10 означает проверку до трансляции в 18:30, а альтернативная отметка 18:31 — после. Выбрать одну отметку нельзя.",
+    "gold_evidence_ids": [
+      "C14",
+      "C31"
+    ],
+    "gold_counterevidence_ids": [
+      "C41"
+    ],
+    "claim_text": "По альтернативной записи та же успешная проверка лобби с S17 произошла в 18:31:00, а не в 18:29:10."
+  },
+  "assistant_reviewed": true,
+  "review_note": "Assistant checked logic and format; human review is not claimed"
+}

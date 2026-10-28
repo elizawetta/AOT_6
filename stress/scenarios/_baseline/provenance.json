@@ -1,0 +1,5 @@
+{
+  "dataset_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "source": "docs + config/claims_metadata.json",
+  "approval": "User confirmed baseline dossier, claims and gold answers in this chat; no new scenario inherits that approval"
+}

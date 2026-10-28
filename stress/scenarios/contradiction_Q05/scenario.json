@@ -1,0 +1,41 @@
+{
+  "scenario_id": "contradiction_Q05",
+  "kind": "add_contradiction",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "dc8e184042f109645904724084e43bb91c6c8e495993647261d9f23f04431c1a",
+  "expected_statuses": {
+    "Q05": "both"
+  },
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "specification": {
+    "scenario_id": "contradiction_Q05",
+    "question_id": "Q05",
+    "kind": "add_contradiction",
+    "source_type": "system_log",
+    "new_text": "Альтернативная копия истории ролей утверждает: единственное назначение publisher записи mira было в 18:20:00, а отметка 18:35:00 ошибочна; причина расхождения не установлена.",
+    "claim_status": "disputed",
+    "metadata": {
+      "path": [
+        0,
+        2,
+        0
+      ],
+      "occurred_at": "2026-03-14T18:20:00+03:00",
+      "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+    },
+    "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+    "gold_status": "both",
+    "gold_answer": "Порядок спорный: при назначении publisher в 18:35 восстановление 18:28:30 было раньше, а при альтернативном времени 18:20 — позже. Приоритет одной истории ролей не установлен.",
+    "gold_evidence_ids": [
+      "C09",
+      "C41"
+    ],
+    "gold_counterevidence_ids": [
+      "C03"
+    ],
+    "claim_text": "По альтернативной истории ролей единственное назначение publisher записи mira произошло в 18:20:00, а не в 18:35:00."
+  },
+  "assistant_reviewed": true,
+  "review_note": "Assistant checked logic and format; human review is not claimed"
+}

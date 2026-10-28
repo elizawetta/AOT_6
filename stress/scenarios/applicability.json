@@ -1,0 +1,98 @@
+[
+  {
+    "question_id": "Q01",
+    "permutation": "permutation_42",
+    "remove_premise": null,
+    "removal_note": "Not applicable: assignment specifies multi-hop and temporal questions",
+    "addition": "contradiction_Q01",
+    "addition_role": "contradiction"
+  },
+  {
+    "question_id": "Q02",
+    "permutation": "permutation_42",
+    "remove_premise": null,
+    "removal_note": "Not applicable: assignment specifies multi-hop and temporal questions",
+    "addition": "contradiction_Q02",
+    "addition_role": "contradiction"
+  },
+  {
+    "question_id": "Q03",
+    "permutation": "permutation_42",
+    "remove_premise": "remove_Q03",
+    "removal_note": null,
+    "addition": "contradiction_Q03",
+    "addition_role": "contradiction"
+  },
+  {
+    "question_id": "Q04",
+    "permutation": "permutation_42",
+    "remove_premise": "remove_Q04",
+    "removal_note": null,
+    "addition": "contradiction_Q04",
+    "addition_role": "contradiction"
+  },
+  {
+    "question_id": "Q05",
+    "permutation": "permutation_42",
+    "remove_premise": "remove_Q05",
+    "removal_note": null,
+    "addition": "contradiction_Q05",
+    "addition_role": "contradiction"
+  },
+  {
+    "question_id": "Q06",
+    "permutation": "permutation_42",
+    "remove_premise": "remove_Q06",
+    "removal_note": null,
+    "addition": "contradiction_Q06",
+    "addition_role": "contradiction"
+  },
+  {
+    "question_id": "Q07",
+    "permutation": "permutation_42",
+    "remove_premise": null,
+    "removal_note": "Not applicable: assignment specifies multi-hop and temporal questions",
+    "addition": "contradiction_Q07",
+    "addition_role": "contradiction"
+  },
+  {
+    "question_id": "Q08",
+    "permutation": "permutation_42",
+    "remove_premise": null,
+    "removal_note": "Not applicable: assignment specifies multi-hop and temporal questions",
+    "addition": "contradiction_Q08",
+    "addition_role": "contradiction"
+  },
+  {
+    "question_id": "Q09",
+    "permutation": "permutation_42",
+    "remove_premise": null,
+    "removal_note": "Not applicable: assignment specifies multi-hop and temporal questions",
+    "addition": "contradiction_Q09",
+    "addition_role": "contradiction"
+  },
+  {
+    "question_id": "Q10",
+    "permutation": "permutation_42",
+    "remove_premise": null,
+    "removal_note": "Not applicable: assignment specifies multi-hop and temporal questions",
+    "addition": "contradiction_Q10",
+    "addition_role": "contradiction"
+  },
+  {
+    "question_id": "Q11",
+    "permutation": "permutation_42",
+    "remove_premise": null,
+    "removal_note": "Not applicable: assignment specifies multi-hop and temporal questions",
+    "addition": "unverified_Q11",
+    "addition_role": "unverified_control"
+  },
+  {
+    "question_id": "Q12",
+    "permutation": "permutation_42",
+    "remove_premise": null,
+    "removal_note": "Not applicable: assignment specifies multi-hop and temporal questions",
+    "addition": "unverified_Q12",
+    "addition_role": "unverified_control"
+  }
+]

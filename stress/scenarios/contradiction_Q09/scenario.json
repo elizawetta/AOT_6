@@ -1,0 +1,41 @@
+{
+  "scenario_id": "contradiction_Q09",
+  "kind": "add_contradiction",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "54c643efb0d6aa4a3e360e59712a84dbfebccae06801723a710cff2d1b2a6546",
+  "expected_statuses": {
+    "Q09": "both"
+  },
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "specification": {
+    "scenario_id": "contradiction_Q09",
+    "question_id": "Q09",
+    "kind": "add_contradiction",
+    "source_type": "statement",
+    "new_text": "Новый свидетель утверждает, что в 18:26 Мира находилась у стойки интервью вне серверной; независимой записи у свидетеля нет.",
+    "claim_status": "disputed",
+    "metadata": {
+      "path": [
+        1,
+        2,
+        1
+      ],
+      "occurred_at": "2026-03-14T18:26:00+03:00",
+      "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+    },
+    "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+    "gold_status": "both",
+    "gold_answer": "Местонахождение остаётся спорным: Олег сообщает о Мире в серверной, Нина и новый свидетель — у стойки интервью. Дополнительное свидетельство не устраняет конфликт автоматически.",
+    "gold_evidence_ids": [
+      "C33"
+    ],
+    "gold_counterevidence_ids": [
+      "C34",
+      "C41"
+    ],
+    "claim_text": "Новый свидетель сообщает, что Мира в 18:26 находилась у стойки интервью вне серверной."
+  },
+  "assistant_reviewed": true,
+  "review_note": "Assistant checked logic and format; human review is not claimed"
+}

@@ -1,0 +1,40 @@
+{
+  "scenario_id": "contradiction_Q02",
+  "kind": "add_contradiction",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "a191e7e066f5691c8ec765c6729f2cafc5615a737a73bc3b05a62c009c5108a0",
+  "expected_statuses": {
+    "Q02": "both"
+  },
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "specification": {
+    "scenario_id": "contradiction_Q02",
+    "question_id": "Q02",
+    "kind": "add_contradiction",
+    "source_type": "system_log",
+    "new_text": "Независимый журнал восстановления утверждает: в операции S17 был использован ключ R3, а не R2; причина расхождения записей не установлена.",
+    "claim_status": "disputed",
+    "metadata": {
+      "path": [
+        0,
+        2,
+        1
+      ],
+      "occurred_at": "2026-03-14T18:28:30+03:00",
+      "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+    },
+    "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+    "gold_status": "both",
+    "gold_answer": "Источники несовместимы: основной журнал указывает R2, альтернативный — R3 вместо R2 для той же операции S17. Выбрать один источник по досье нельзя.",
+    "gold_evidence_ids": [
+      "C11"
+    ],
+    "gold_counterevidence_ids": [
+      "C41"
+    ],
+    "claim_text": "По альтернативному журналу при восстановлении S17 использован R3 вместо R2."
+  },
+  "assistant_reviewed": true,
+  "review_note": "Assistant checked logic and format; human review is not claimed"
+}

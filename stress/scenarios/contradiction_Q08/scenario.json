@@ -1,0 +1,45 @@
+{
+  "scenario_id": "contradiction_Q08",
+  "kind": "add_contradiction",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "81b986bfdbe2931a1e37b3ec024a3e9b4e3b479d1bbdb33af07f83a2a1469c39",
+  "expected_statuses": {
+    "Q08": "both"
+  },
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "specification": {
+    "scenario_id": "contradiction_Q08",
+    "question_id": "Q08",
+    "kind": "add_contradiction",
+    "source_type": "policy",
+    "new_text": "Равноправная архивная копия E04 утверждает: разрешение распространялось на обычную публикацию B18 заданием J18 в 18:24, поставленным в очередь до заморозки; приоритет одной копии не установлен.",
+    "claim_status": "disputed",
+    "metadata": {
+      "path": [
+        2,
+        2,
+        2
+      ],
+      "occurred_at": null,
+      "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+    },
+    "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+    "gold_status": "both",
+    "gold_answer": "Копии E04 несовместимы: исходная не распространяется на B18, альтернативная разрешает публикацию B18 заданием J18 в 18:24. Есть основания разрешённости и запрета.",
+    "gold_evidence_ids": [
+      "C41"
+    ],
+    "gold_counterevidence_ids": [
+      "C06",
+      "C07",
+      "C16",
+      "C17",
+      "C18",
+      "C25"
+    ],
+    "claim_text": "По альтернативной копии E04 разрешена обычная публикация B18 заданием J18 в 18:24, поставленным в очередь до заморозки."
+  },
+  "assistant_reviewed": true,
+  "review_note": "Assistant checked logic and format; human review is not claimed"
+}

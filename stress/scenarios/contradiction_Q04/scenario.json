@@ -1,0 +1,41 @@
+{
+  "scenario_id": "contradiction_Q04",
+  "kind": "add_contradiction",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "d145c7ab7eef21b8052634dbd5b2efd40e54daaaef496242c8a8adb4041a60c7",
+  "expected_statuses": {
+    "Q04": "both"
+  },
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "specification": {
+    "scenario_id": "contradiction_Q04",
+    "question_id": "Q04",
+    "kind": "add_contradiction",
+    "source_type": "system_log",
+    "new_text": "Независимый журнал утверждает: в операции восстановления S17 действовала учётная запись mira, а не restore_bot; причина расхождения журналов не установлена.",
+    "claim_status": "disputed",
+    "metadata": {
+      "path": [
+        0,
+        2,
+        1
+      ],
+      "occurred_at": "2026-03-14T18:28:30+03:00",
+      "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+    },
+    "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+    "gold_status": "both",
+    "gold_answer": "Есть основания обеих версий: вход в 18:10 выполнен mira; основной журнал называет оператором учётную запись restore_bot, альтернативный — mira. Совпадение учётных записей остаётся спорным.",
+    "gold_evidence_ids": [
+      "C01",
+      "C41"
+    ],
+    "gold_counterevidence_ids": [
+      "C10"
+    ],
+    "claim_text": "По альтернативному журналу восстановление S17 выполнено от имени mira, а не restore_bot."
+  },
+  "assistant_reviewed": true,
+  "review_note": "Assistant checked logic and format; human review is not claimed"
+}

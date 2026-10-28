@@ -1,0 +1,758 @@
+{
+  "version": 2,
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "scenario_count": 17,
+  "question_cases": 28,
+  "calls_for_three_modes": 84,
+  "counts": {
+    "permutation_question_cases": 12,
+    "removal_question_cases": 4,
+    "contradiction_question_cases": 10,
+    "unverified_control_question_cases": 2
+  },
+  "scenarios": [
+    {
+      "scenario_id": "permutation_42",
+      "kind": "permutation",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "ff0e3c2aa9da366a93e472e574db1441ec09ad8dc328fc681557f0a521f0eba1",
+      "expected_statuses": {
+        "Q01": "entailed",
+        "Q02": "entailed",
+        "Q03": "entailed",
+        "Q04": "contradicted",
+        "Q05": "contradicted",
+        "Q06": "entailed",
+        "Q07": "entailed",
+        "Q08": "contradicted",
+        "Q09": "both",
+        "Q10": "contradicted",
+        "Q11": "insufficient",
+        "Q12": "insufficient"
+      },
+      "random_state": 42,
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "original_document_order": [
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D10"
+      ],
+      "changed_document_order": [
+        "D09",
+        "D02",
+        "D06",
+        "D01",
+        "D08",
+        "D03",
+        "D10",
+        "D05",
+        "D04",
+        "D07"
+      ],
+      "factor": "Изменён только порядок документов; тексты, утверждения, метаданные и эталоны сохранены.",
+      "assistant_reviewed": true
+    },
+    {
+      "scenario_id": "remove_Q03",
+      "kind": "remove_premise",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "b8344ed25b42597c6536082c719e99e1759bfe6841a44a85ff7a887254d05b8d",
+      "expected_statuses": {
+        "Q03": "insufficient"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "remove_Q03",
+        "question_id": "Q03",
+        "kind": "remove_premise",
+        "removed_claim_ids": [
+          "C28"
+        ],
+        "replacements": {
+          "D01": [
+            [
+              "Во время проверки запуска система сообщила, что запрошенный ресурс не найден.",
+              "Во время проверки запуска система сообщила об ошибке."
+            ]
+          ],
+          "D02": [
+            [
+              " | reason=resource_missing:arena_trial",
+              ""
+            ]
+          ],
+          "D05": [
+            [
+              "почему после его появления возникла ошибка отсутствующего ресурса.",
+              "почему после его появления возникла ошибка запуска."
+            ]
+          ],
+          "D08": [
+            [
+              "На финальном игровом сервере ресурс arena_trial отсутствовал. ",
+              ""
+            ],
+            [
+              "В изолированной копии финальной среды запуск с конфигурацией B18 воспроизвёл ошибку отсутствия arena_trial.",
+              "В изолированной копии финальной среды запуск с конфигурацией B18 завершился ошибкой."
+            ],
+            [
+              "Результат связывает неисправность с несоответствующей ссылкой в B18. Он не показывает",
+              "Сверка не показывает"
+            ],
+            [
+              "Сбой запуска связан со ссылкой arena_trial в B18; восстановленный S17 использует доступную arena_final.",
+              "Восстановленный S17 использует доступную arena_final."
+            ],
+            [
+              "умышленность выбора ошибочной ссылки",
+              "умышленность выбора ссылки"
+            ]
+          ]
+        },
+        "updated_evidence": {
+          "C08": "18:24:06 | event=lobby_check | active_package=B18 | result=failed"
+        },
+        "factor": "Отсутствие arena_trial в финальной среде; удалены также повторные сообщения и производная причина ошибки.",
+        "gold_status": "insufficient",
+        "gold_answer": "Нельзя установить причину ошибки после удаления сведений о доступности arena_trial. В досье остаются ссылка B18 на arena_trial и неуспешная проверка, но отсутствует необходимое основание об отсутствии ресурса.",
+        "gold_evidence_ids": [
+          "C27",
+          "C08"
+        ],
+        "gold_counterevidence_ids": []
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "remove_Q04",
+      "kind": "remove_premise",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "f12719ddf9273a37f572df8a528bb3c93bf6683295515768300da2dddcb9ff0f",
+      "expected_statuses": {
+        "Q04": "insufficient"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "remove_Q04",
+        "question_id": "Q04",
+        "kind": "remove_premise",
+        "removed_claim_ids": [
+          "C01"
+        ],
+        "replacements": {
+          "D02": [
+            [
+              "18:10:00 | event=login | actor=mira | result=success",
+              "18:10:00 | event=login | result=success"
+            ]
+          ]
+        },
+        "updated_evidence": {},
+        "factor": "Идентичность учётной записи входа в 18:10:00.",
+        "gold_status": "insufficient",
+        "gold_answer": "Сравнить учётные записи нельзя: вход в 18:10:00 зарегистрирован, но его actor удалён. Учётная запись восстановления известна — restore_bot.",
+        "gold_evidence_ids": [
+          "C10"
+        ],
+        "gold_counterevidence_ids": []
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "remove_Q05",
+      "kind": "remove_premise",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "b6f749d0cd2a1f457c4bba9ee095c42d39db90171bf4872909526be78c1594e6",
+      "expected_statuses": {
+        "Q05": "insufficient"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "remove_Q05",
+        "question_id": "Q05",
+        "kind": "remove_premise",
+        "removed_claim_ids": [
+          "C03",
+          "C40"
+        ],
+        "replacements": {
+          "D02": [
+            [
+              "18:35:00 | event=role_assign | subject=mira | role=publisher | result=success",
+              ""
+            ]
+          ],
+          "D05": [
+            [
+              "Мне задавали вопрос, означает ли более позднее появление обычных прав публикации, что резервное восстановление было невозможно раньше.",
+              "Мне задавали вопрос, означает ли отсутствие обычных прав публикации, что резервное восстановление было невозможно."
+            ]
+          ],
+          "D08": [
+            [
+              "Назначение роли publisher записи mira произошло позднее восстановления S17. Это не противоречит устройству резервного механизма, которому такая личная роль не требуется. По истории ролей до 18:35 mira имела только observer. Следовательно, нельзя объяснять раннее восстановление наличием у mira обычного права публикации. Для него в документах указан другой способ выполнения. Разница способов должна сохраняться при описании причин и при оценке выполнения регламента.",
+              "Резервный механизм не требует личной роли publisher. Для восстановления S17 в документах указан отдельный способ выполнения. Разница способов должна сохраняться при описании причин и при оценке выполнения регламента."
+            ]
+          ]
+        },
+        "updated_evidence": {},
+        "factor": "Время назначения publisher; удалён также производный временной вывод C40 и повторы порядка событий.",
+        "gold_status": "insufficient",
+        "gold_answer": "Нельзя определить порядок: восстановление S17 зарегистрировано в 18:28:30, но время назначения publisher и производный вывод об очередности удалены.",
+        "gold_evidence_ids": [
+          "C09"
+        ],
+        "gold_counterevidence_ids": []
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "remove_Q06",
+      "kind": "remove_premise",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "573410d625f797e67560b68ebd32b50063dcd63268a1b59c1c3971ef675b16a9",
+      "expected_statuses": {
+        "Q06": "insufficient"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "remove_Q06",
+        "question_id": "Q06",
+        "kind": "remove_premise",
+        "removed_claim_ids": [
+          "C31"
+        ],
+        "replacements": {
+          "D01": [
+            [
+              "В 18:30 началась трансляция.",
+              ""
+            ]
+          ]
+        },
+        "updated_evidence": {},
+        "factor": "Время начала трансляции.",
+        "gold_status": "insufficient",
+        "gold_answer": "Нельзя определить порядок: успешная проверка S17 зарегистрирована в 18:29:10, но время начала трансляции удалено.",
+        "gold_evidence_ids": [
+          "C14"
+        ],
+        "gold_counterevidence_ids": []
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "contradiction_Q01",
+      "kind": "add_contradiction",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "adafccf2e46095f30186bc201cd7b0e9e9c385bd917e4d30b18bff64bea75b7f",
+      "expected_statuses": {
+        "Q01": "both"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "contradiction_Q01",
+        "question_id": "Q01",
+        "kind": "add_contradiction",
+        "source_type": "system_log",
+        "new_text": "Независимый журнал той же системы утверждает: успешного входа mira в 18:10:00 не было; причина расхождения с основным журналом не установлена.",
+        "claim_status": "disputed",
+        "metadata": {
+          "path": [
+            0,
+            2,
+            0
+          ],
+          "occurred_at": "2026-03-14T18:10:00+03:00",
+          "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+        },
+        "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+        "gold_status": "both",
+        "gold_answer": "Основной журнал указывает 18:10:00, альтернативный журнал отрицает вход в этот момент. Противоречие не разрешено; однозначное время входа по этим источникам установить нельзя.",
+        "gold_evidence_ids": [
+          "C01"
+        ],
+        "gold_counterevidence_ids": [
+          "C41"
+        ],
+        "claim_text": "Альтернативный журнал отрицает успешный вход mira в 18:10:00."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "contradiction_Q02",
+      "kind": "add_contradiction",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "a191e7e066f5691c8ec765c6729f2cafc5615a737a73bc3b05a62c009c5108a0",
+      "expected_statuses": {
+        "Q02": "both"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "contradiction_Q02",
+        "question_id": "Q02",
+        "kind": "add_contradiction",
+        "source_type": "system_log",
+        "new_text": "Независимый журнал восстановления утверждает: в операции S17 был использован ключ R3, а не R2; причина расхождения записей не установлена.",
+        "claim_status": "disputed",
+        "metadata": {
+          "path": [
+            0,
+            2,
+            1
+          ],
+          "occurred_at": "2026-03-14T18:28:30+03:00",
+          "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+        },
+        "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+        "gold_status": "both",
+        "gold_answer": "Источники несовместимы: основной журнал указывает R2, альтернативный — R3 вместо R2 для той же операции S17. Выбрать один источник по досье нельзя.",
+        "gold_evidence_ids": [
+          "C11"
+        ],
+        "gold_counterevidence_ids": [
+          "C41"
+        ],
+        "claim_text": "По альтернативному журналу при восстановлении S17 использован R3 вместо R2."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "contradiction_Q03",
+      "kind": "add_contradiction",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "f7a733393944752b329cde5708c4b46fd32799e499f83fb35cf324f76016a403",
+      "expected_statuses": {
+        "Q03": "both"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "contradiction_Q03",
+        "question_id": "Q03",
+        "kind": "add_contradiction",
+        "source_type": "technical_report",
+        "new_text": "Альтернативная техническая сверка утверждает: arena_trial был доступен на финальном сервере при проверке B18; причина расхождения с основной сверкой не установлена.",
+        "claim_status": "disputed",
+        "metadata": {
+          "path": [
+            0,
+            2,
+            1
+          ],
+          "occurred_at": "2026-03-14T18:24:06+03:00",
+          "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+        },
+        "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+        "gold_status": "both",
+        "gold_answer": "Есть несовместимые основания: основная сверка и журнал связывают ошибку с отсутствующим arena_trial, альтернативная сверка сообщает о его доступности. Однозначный вывод о причине по изменённому досье невозможен.",
+        "gold_evidence_ids": [
+          "C27",
+          "C28",
+          "C08"
+        ],
+        "gold_counterevidence_ids": [
+          "C41"
+        ],
+        "claim_text": "По альтернативной сверке arena_trial был доступен при проверке B18."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "contradiction_Q04",
+      "kind": "add_contradiction",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "d145c7ab7eef21b8052634dbd5b2efd40e54daaaef496242c8a8adb4041a60c7",
+      "expected_statuses": {
+        "Q04": "both"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "contradiction_Q04",
+        "question_id": "Q04",
+        "kind": "add_contradiction",
+        "source_type": "system_log",
+        "new_text": "Независимый журнал утверждает: в операции восстановления S17 действовала учётная запись mira, а не restore_bot; причина расхождения журналов не установлена.",
+        "claim_status": "disputed",
+        "metadata": {
+          "path": [
+            0,
+            2,
+            1
+          ],
+          "occurred_at": "2026-03-14T18:28:30+03:00",
+          "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+        },
+        "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+        "gold_status": "both",
+        "gold_answer": "Есть основания обеих версий: вход в 18:10 выполнен mira; основной журнал называет оператором учётную запись restore_bot, альтернативный — mira. Совпадение учётных записей остаётся спорным.",
+        "gold_evidence_ids": [
+          "C01",
+          "C41"
+        ],
+        "gold_counterevidence_ids": [
+          "C10"
+        ],
+        "claim_text": "По альтернативному журналу восстановление S17 выполнено от имени mira, а не restore_bot."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "contradiction_Q05",
+      "kind": "add_contradiction",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "dc8e184042f109645904724084e43bb91c6c8e495993647261d9f23f04431c1a",
+      "expected_statuses": {
+        "Q05": "both"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "contradiction_Q05",
+        "question_id": "Q05",
+        "kind": "add_contradiction",
+        "source_type": "system_log",
+        "new_text": "Альтернативная копия истории ролей утверждает: единственное назначение publisher записи mira было в 18:20:00, а отметка 18:35:00 ошибочна; причина расхождения не установлена.",
+        "claim_status": "disputed",
+        "metadata": {
+          "path": [
+            0,
+            2,
+            0
+          ],
+          "occurred_at": "2026-03-14T18:20:00+03:00",
+          "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+        },
+        "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+        "gold_status": "both",
+        "gold_answer": "Порядок спорный: при назначении publisher в 18:35 восстановление 18:28:30 было раньше, а при альтернативном времени 18:20 — позже. Приоритет одной истории ролей не установлен.",
+        "gold_evidence_ids": [
+          "C09",
+          "C41"
+        ],
+        "gold_counterevidence_ids": [
+          "C03"
+        ],
+        "claim_text": "По альтернативной истории ролей единственное назначение publisher записи mira произошло в 18:20:00, а не в 18:35:00."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "contradiction_Q06",
+      "kind": "add_contradiction",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "5637f550c4eabd1e637a161424eb268208afd30556d35c10a3431ae8c42da5ed",
+      "expected_statuses": {
+        "Q06": "both"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "contradiction_Q06",
+        "question_id": "Q06",
+        "kind": "add_contradiction",
+        "source_type": "system_log",
+        "new_text": "Альтернативная запись той же успешной проверки лобби с S17 указывает 18:31:00 вместо 18:29:10; причина расхождения двух отметок не установлена.",
+        "claim_status": "disputed",
+        "metadata": {
+          "path": [
+            0,
+            2,
+            2
+          ],
+          "occurred_at": "2026-03-14T18:31:00+03:00",
+          "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+        },
+        "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+        "gold_status": "both",
+        "gold_answer": "Порядок спорный: отметка проверки 18:29:10 означает проверку до трансляции в 18:30, а альтернативная отметка 18:31 — после. Выбрать одну отметку нельзя.",
+        "gold_evidence_ids": [
+          "C14",
+          "C31"
+        ],
+        "gold_counterevidence_ids": [
+          "C41"
+        ],
+        "claim_text": "По альтернативной записи та же успешная проверка лобби с S17 произошла в 18:31:00, а не в 18:29:10."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "contradiction_Q07",
+      "kind": "add_contradiction",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "ac9025a3aa3cc2ee7b5af83681dd85eaa94a199bd9d0feda2d6e04bdb48d3f02",
+      "expected_statuses": {
+        "Q07": "both"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "contradiction_Q07",
+        "question_id": "Q07",
+        "kind": "add_contradiction",
+        "source_type": "policy",
+        "new_text": "Равноправная архивная копия E04 утверждает: восстановление S17 назначенным оператором без личной роли publisher запрещено; остальные условия совпадают, приоритет одной копии не установлен.",
+        "claim_status": "disputed",
+        "metadata": {
+          "path": [
+            2,
+            2,
+            2
+          ],
+          "occurred_at": null,
+          "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+        },
+        "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+        "gold_status": "both",
+        "gold_answer": "Копии E04 несовместимы: исходная допускает резервное восстановление без личной роли publisher, альтернативная запрещает его без этой роли. Приоритет копии не установлен.",
+        "gold_evidence_ids": [
+          "C17",
+          "C20",
+          "C24",
+          "C26"
+        ],
+        "gold_counterevidence_ids": [
+          "C41"
+        ],
+        "claim_text": "По альтернативной копии E04 восстановление S17 без личной роли publisher запрещено."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "contradiction_Q08",
+      "kind": "add_contradiction",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "81b986bfdbe2931a1e37b3ec024a3e9b4e3b479d1bbdb33af07f83a2a1469c39",
+      "expected_statuses": {
+        "Q08": "both"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "contradiction_Q08",
+        "question_id": "Q08",
+        "kind": "add_contradiction",
+        "source_type": "policy",
+        "new_text": "Равноправная архивная копия E04 утверждает: разрешение распространялось на обычную публикацию B18 заданием J18 в 18:24, поставленным в очередь до заморозки; приоритет одной копии не установлен.",
+        "claim_status": "disputed",
+        "metadata": {
+          "path": [
+            2,
+            2,
+            2
+          ],
+          "occurred_at": null,
+          "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+        },
+        "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+        "gold_status": "both",
+        "gold_answer": "Копии E04 несовместимы: исходная не распространяется на B18, альтернативная разрешает публикацию B18 заданием J18 в 18:24. Есть основания разрешённости и запрета.",
+        "gold_evidence_ids": [
+          "C41"
+        ],
+        "gold_counterevidence_ids": [
+          "C06",
+          "C07",
+          "C16",
+          "C17",
+          "C18",
+          "C25"
+        ],
+        "claim_text": "По альтернативной копии E04 разрешена обычная публикация B18 заданием J18 в 18:24, поставленным в очередь до заморозки."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "contradiction_Q09",
+      "kind": "add_contradiction",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "54c643efb0d6aa4a3e360e59712a84dbfebccae06801723a710cff2d1b2a6546",
+      "expected_statuses": {
+        "Q09": "both"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "contradiction_Q09",
+        "question_id": "Q09",
+        "kind": "add_contradiction",
+        "source_type": "statement",
+        "new_text": "Новый свидетель утверждает, что в 18:26 Мира находилась у стойки интервью вне серверной; независимой записи у свидетеля нет.",
+        "claim_status": "disputed",
+        "metadata": {
+          "path": [
+            1,
+            2,
+            1
+          ],
+          "occurred_at": "2026-03-14T18:26:00+03:00",
+          "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+        },
+        "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+        "gold_status": "both",
+        "gold_answer": "Местонахождение остаётся спорным: Олег сообщает о Мире в серверной, Нина и новый свидетель — у стойки интервью. Дополнительное свидетельство не устраняет конфликт автоматически.",
+        "gold_evidence_ids": [
+          "C33"
+        ],
+        "gold_counterevidence_ids": [
+          "C34",
+          "C41"
+        ],
+        "claim_text": "Новый свидетель сообщает, что Мира в 18:26 находилась у стойки интервью вне серверной."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "contradiction_Q10",
+      "kind": "add_contradiction",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "24dccbb7fcbf728ba54a65628e9a213b45b411c61c15d7c5d8bf284de2240eaf",
+      "expected_statuses": {
+        "Q10": "both"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "contradiction_Q10",
+        "question_id": "Q10",
+        "kind": "add_contradiction",
+        "source_type": "system_log",
+        "new_text": "Независимый серверный журнал утверждает: публикация B18 произошла в 18:18:00, а отметка 18:24:00 относится к этой же операции ошибочно; причина расхождения журналов не установлена.",
+        "claim_status": "disputed",
+        "metadata": {
+          "path": [
+            0,
+            2,
+            0
+          ],
+          "occurred_at": "2026-03-14T18:18:00+03:00",
+          "rationale": "Временная точка относится к описываемой операции или заявленному времени, а не к созданию документа. Для альтернативного свидетельства время остаётся заявленным. Для нормативного условия отдельная временная точка не назначена."
+        },
+        "factor": "Добавлен один альтернативный источник о той же операции или условии.",
+        "gold_status": "both",
+        "gold_answer": "Время публикации спорное: исходный журнал указывает 18:24:00, новый журнал — 18:18:00. В отличие от исходного досье, теперь конфликтуют технические источники без установленного приоритета.",
+        "gold_evidence_ids": [
+          "C35",
+          "C41"
+        ],
+        "gold_counterevidence_ids": [
+          "C07",
+          "C30"
+        ],
+        "claim_text": "По альтернативному серверному журналу публикация B18 произошла в 18:18:00, а не в 18:24:00."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "unverified_Q11",
+      "kind": "add_unverified_control",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "bd36357c73b456fc0178d38fbf5e095ded9afb8bbfa5560fb37c601a8fd9ac46",
+      "expected_statuses": {
+        "Q11": "insufficient"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "unverified_Q11",
+        "question_id": "Q11",
+        "kind": "add_unverified_control",
+        "source_type": "statement",
+        "new_text": "Анонимное сообщение: «Вера хотела сорвать финал». Автор не раскрыт, подтверждающие материалы не приложены.",
+        "claim_status": "reported",
+        "metadata": {
+          "path": [
+            1,
+            1,
+            2
+          ],
+          "occurred_at": null,
+          "rationale": "Анонимное неподтверждённое сообщение о намерении; время события не установлено."
+        },
+        "factor": "Добавлена одна неподтверждённая версия о мотиве.",
+        "gold_status": "insufficient",
+        "gold_answer": "Намерение и намеренное причинение сбоя по-прежнему не установлены. Анонимное заявление без подтверждений не доказывает ни умысел Веры, ни её физическое участие в публикации. Нужны проверяемые сведения о намерении и действиях.",
+        "gold_evidence_ids": [
+          "C37",
+          "C41"
+        ],
+        "gold_counterevidence_ids": [],
+        "claim_text": "Анонимный автор утверждает, что Вера хотела сорвать финал."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    },
+    {
+      "scenario_id": "unverified_Q12",
+      "kind": "add_unverified_control",
+      "human_reviewed": false,
+      "reviewed_dataset_sha256": null,
+      "dataset_sha256": "d1249b290e84c4f6200a24ec475c4ed51f006f9107246ecbf7a72af2e71c3777",
+      "expected_statuses": {
+        "Q12": "insufficient"
+      },
+      "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+      "specification": {
+        "scenario_id": "unverified_Q12",
+        "question_id": "Q12",
+        "kind": "add_unverified_control",
+        "source_type": "statement",
+        "new_text": "Анонимное сообщение: «Говорят, S17 запустила Мира». Автор прямо указывает, что сам операцию не наблюдал и передаёт неподтверждённый слух.",
+        "claim_status": "reported",
+        "metadata": {
+          "path": [
+            1,
+            1,
+            1
+          ],
+          "occurred_at": "2026-03-14T18:28:30+03:00",
+          "rationale": "Сообщение отсылает к той же операции восстановления S17; её временная точка известна из журнала, но личность оператора этим не подтверждается."
+        },
+        "factor": "Добавлен один неподтверждённый пересказ версии о физическом операторе.",
+        "gold_status": "insufficient",
+        "gold_answer": "Физический оператор независимо не установлен. Самоотчёт Миры и анонимный слух не заменяют персональную аутентификацию или независимую запись операции. Нужны проверяемые сведения о человеке за пультом.",
+        "gold_evidence_ids": [
+          "C10",
+          "C15",
+          "C32",
+          "C41"
+        ],
+        "gold_counterevidence_ids": [],
+        "claim_text": "Анонимный автор пересказывает неподтверждённый слух о том, что S17 запустила Мира."
+      },
+      "assistant_reviewed": true,
+      "review_note": "Assistant checked logic and format; human review is not claimed"
+    }
+  ]
+}

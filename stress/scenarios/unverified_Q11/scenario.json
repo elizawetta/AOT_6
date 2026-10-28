@@ -1,0 +1,39 @@
+{
+  "scenario_id": "unverified_Q11",
+  "kind": "add_unverified_control",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "bd36357c73b456fc0178d38fbf5e095ded9afb8bbfa5560fb37c601a8fd9ac46",
+  "expected_statuses": {
+    "Q11": "insufficient"
+  },
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce",
+  "specification": {
+    "scenario_id": "unverified_Q11",
+    "question_id": "Q11",
+    "kind": "add_unverified_control",
+    "source_type": "statement",
+    "new_text": "Анонимное сообщение: «Вера хотела сорвать финал». Автор не раскрыт, подтверждающие материалы не приложены.",
+    "claim_status": "reported",
+    "metadata": {
+      "path": [
+        1,
+        1,
+        2
+      ],
+      "occurred_at": null,
+      "rationale": "Анонимное неподтверждённое сообщение о намерении; время события не установлено."
+    },
+    "factor": "Добавлена одна неподтверждённая версия о мотиве.",
+    "gold_status": "insufficient",
+    "gold_answer": "Намерение и намеренное причинение сбоя по-прежнему не установлены. Анонимное заявление без подтверждений не доказывает ни умысел Веры, ни её физическое участие в публикации. Нужны проверяемые сведения о намерении и действиях.",
+    "gold_evidence_ids": [
+      "C37",
+      "C41"
+    ],
+    "gold_counterevidence_ids": [],
+    "claim_text": "Анонимный автор утверждает, что Вера хотела сорвать финал."
+  },
+  "assistant_reviewed": true,
+  "review_note": "Assistant checked logic and format; human review is not claimed"
+}

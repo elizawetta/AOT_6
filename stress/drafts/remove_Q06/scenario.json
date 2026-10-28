@@ -1,0 +1,24 @@
+{
+  "scenario_id": "remove_Q06",
+  "kind": "remove_premise",
+  "human_reviewed": false,
+  "reviewed_dataset_sha256": null,
+  "dataset_sha256": "064a2cc20b78bbd9a9fb68b11a7179b569228c4d23efd56a8094b430f2fa4409",
+  "expected_statuses": {
+    "Q06": "insufficient"
+  },
+  "removed_claim_ids": [
+    "C31"
+  ],
+  "redactions": {
+    "D01": [
+      [
+        "В 18:30 началась трансляция.",
+        ""
+      ]
+    ]
+  },
+  "updated_evidence": {},
+  "missing_information": "Время начала трансляции.",
+  "baseline_sha256": "c2dfe30a5a95044ea2a713132d703c7a1337274f7d03458bc46605967e3f54ce"
+}

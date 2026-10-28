@@ -1,0 +1,17 @@
+annotated-types==0.8.0
+iniconfig==2.3.1
+numpy==2.4.6
+packaging==26.3
+pandas==2.3.3
+pluggy==1.7.0
+pydantic==2.14.1
+pydantic_core==2.50.1
+Pygments==2.21.0
+pytest==8.4.2
+python-dateutil==3.0.0
+pytz==2026.5
+rank-bm25==0.2.2
+six==1.17.0
+typing-inspection==0.4.4
+typing_extensions==4.16.0
+tzdata==2026.5

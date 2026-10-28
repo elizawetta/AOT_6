@@ -1,0 +1,74 @@
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from src.experiment import digest, write_json
+from src.schemas import load_dataset
+from src.stress import add_contradiction, permute_documents, remove_premise, save_variant
+
+
+def main():
+    dataset = load_dataset(ROOT/'docs', ROOT/'config/claims_metadata.json')
+    directory = ROOT/'stress/drafts'
+    if directory.exists() and any(directory.iterdir()):
+        raise ValueError('Drafts already exist; preserve review history before rebuilding')
+    manifests = []
+    manifests.append(save_variant(permute_documents(dataset), directory/'permutation_42', 'permutation_42', 'permutation', dict(random_state=42, original_document_order=[d.document_id for d in dataset.documents], baseline_sha256=digest(dataset.model_dump_json()))))
+    recipes = {
+      'Q03': (['C28'], {
+        'D01':[('Во время проверки запуска система сообщила, что запрошенный ресурс не найден.', 'Во время проверки запуска система сообщила об ошибке.')],
+        'D02':[(' | reason=resource_missing:arena_trial','')],
+        'D05':[('почему после его появления возникла ошибка отсутствующего ресурса.', 'почему после его появления возникла ошибка запуска.')],
+        'D08':[
+          ('На финальном игровом сервере ресурс arena_trial отсутствовал.',''),
+          ('В изолированной копии финальной среды запуск с конфигурацией B18 воспроизвёл ошибку отсутствия arena_trial.','В изолированной копии финальной среды запуск с конфигурацией B18 завершился ошибкой.'),
+          ('Результат связывает неисправность с несоответствующей ссылкой в B18.',''),
+          ('Сбой запуска связан со ссылкой arena_trial в B18; восстановленный S17 использует доступную arena_final.','Восстановленный S17 использует доступную arena_final.'),
+          ('умышленность выбора ошибочной ссылки','умышленность выбора ссылки')]
+      }, {'C08':'18:24:06 | event=lobby_check | active_package=B18 | result=failed'}, 'Отсутствие arena_trial в финальной среде; удалены также повторные сообщения и производная причина ошибки.'),
+      'Q04': (['C01'], {'D02':[('18:10:00 | event=login | actor=mira | result=success','')]}, {}, 'Идентичность учётной записи входа в 18:10:00.'),
+      'Q05': (['C03','C40'], {
+        'D02':[('18:35:00 | event=role_assign | subject=mira | role=publisher | result=success','')],
+        'D05':[('Мне задавали вопрос, означает ли более позднее появление обычных прав публикации, что резервное восстановление было невозможно раньше.', 'Мне задавали вопрос, означает ли отсутствие обычных прав публикации, что резервное восстановление было невозможно.')],
+        'D08':[
+          ('Назначение роли publisher записи mira произошло позднее восстановления S17.',''),
+          ('По истории ролей до 18:35 mira имела только observer.',''),
+          ('Следовательно, нельзя объяснять раннее восстановление наличием у mira обычного права публикации.','')]
+      }, {}, 'Время назначения publisher; удалён также производный временной вывод C40 и повторы порядка событий.'),
+      'Q06': (['C31'], {'D01':[('В 18:30 началась трансляция.','')]}, {}, 'Время начала трансляции.')
+    }
+    for qid, (removed, replacements, updates, description) in recipes.items():
+        value=remove_premise(dataset,qid,removed,replacements,updates)
+        sid='remove_'+qid
+        manifests.append(save_variant(value,directory/sid,sid,'remove_premise',dict(removed_claim_ids=removed,redactions=replacements,updated_evidence=updates,missing_information=description,baseline_sha256=digest(dataset.model_dump_json()))))
+    additions = {
+      'Q01':('Независимый журнал той же системы утверждает: успешного входа mira в 18:10:00 не было; причина расхождения с основным журналом не установлена.', 'both',['C01'],['C41'],'system_log'),
+      'Q02':('Независимый журнал восстановления утверждает: в операции S17 был использован ключ R3, а не R2; причина расхождения записей не установлена.', 'both',['C11'],['C41'],'system_log'),
+      'Q03':('Альтернативная техническая сверка утверждает: arena_trial был доступен на финальном сервере при проверке B18; причина расхождения с основной сверкой не установлена.', 'both',['C27','C28','C08'],['C41'],'technical_report'),
+      'Q04':('Независимый журнал утверждает: в операции восстановления S17 действовала учётная запись mira, а не restore_bot; причина расхождения журналов не установлена.', 'both',['C01','C41'],['C01','C10'],'system_log'),
+      'Q05':('Альтернативная копия истории ролей утверждает: единственное назначение publisher записи mira было в 18:20:00, а отметка 18:35:00 ошибочна; причина расхождения не установлена.', 'both',['C09','C41'],['C09','C03'],'system_log'),
+      'Q06':('Альтернативная запись той же успешной проверки лобби с S17 указывает 18:31:00 вместо 18:29:10; причина расхождения двух отметок не установлена.', 'both',['C14','C31'],['C41','C31'],'system_log'),
+      'Q07':('Равноправная архивная копия E04 утверждает: восстановление S17 назначенным оператором без личной роли publisher запрещено; остальные условия совпадают, приоритет одной копии не установлен.', 'both',['C17','C20','C24','C26'],['C41'],'policy'),
+      'Q08':('Равноправная архивная копия E04 утверждает: разрешение распространялось на обычную публикацию B18 заданием J18 в 18:24, поставленным в очередь до заморозки; приоритет одной копии не установлен.', 'both',['C41'],['C06','C07','C16','C17','C18','C25'],'policy'),
+      'Q09':('Новый свидетель утверждает, что в 18:26 Мира находилась у стойки интервью вне серверной; независимой записи у свидетеля нет.', 'both',['C33'],['C34','C41'],'statement'),
+      'Q10':('Независимый серверный журнал утверждает: публикация B18 произошла в 18:18:00, а отметка 18:24:00 относится к этой же операции ошибочно; причина расхождения журналов не установлена.', 'both',['C35','C41'],['C07','C30'],'system_log')
+    }
+    for qid, (text,status,evidence,counter,kind) in additions.items():
+        shared=set(evidence)&set(counter)
+        counter=[x for x in counter if x not in shared]
+        sid='contradiction_'+qid
+        value=add_contradiction(dataset,qid,text,status,evidence,counter,kind)
+        manifests.append(save_variant(value,directory/sid,sid,'add_contradiction',dict(added_document_id='D11',added_claim_id='C41',baseline_sha256=digest(dataset.model_dump_json()),review_warning='Проверить достаточность новых оснований и отсутствие приоритета; не считать ожидаемый переход автоматически доказанным.')))
+    applicability=[]
+    for q in dataset.questions:
+        applicability.append(dict(question_id=q.question_id,permutation='draft',remove_premise='draft' if q.question_id in recipes else 'not_applicable: specified for multi-hop and temporal questions only',add_contradiction='draft' if q.question_id in additions else 'not_applicable: baseline has insufficient information; a single new statement does not automatically create mutually opposing grounds'))
+    write_json(ROOT/'stress/applicability.json',applicability)
+    write_json(ROOT/'stress/draft_index.json',[dict(scenario_id=m['scenario_id'],kind=m['kind'],expected_statuses=m['expected_statuses'],human_reviewed=m['human_reviewed']) for m in manifests])
+    print('Prepared draft scenarios:',len(manifests))
+
+
+if __name__=='__main__':
+    main()

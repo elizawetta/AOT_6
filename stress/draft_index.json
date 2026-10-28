@@ -1,0 +1,133 @@
+[
+  {
+    "scenario_id": "permutation_42",
+    "kind": "permutation",
+    "expected_statuses": {
+      "Q01": "entailed",
+      "Q02": "entailed",
+      "Q03": "entailed",
+      "Q04": "contradicted",
+      "Q05": "contradicted",
+      "Q06": "entailed",
+      "Q07": "entailed",
+      "Q08": "contradicted",
+      "Q09": "both",
+      "Q10": "contradicted",
+      "Q11": "insufficient",
+      "Q12": "insufficient"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "remove_Q03",
+    "kind": "remove_premise",
+    "expected_statuses": {
+      "Q03": "insufficient"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "remove_Q04",
+    "kind": "remove_premise",
+    "expected_statuses": {
+      "Q04": "insufficient"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "remove_Q05",
+    "kind": "remove_premise",
+    "expected_statuses": {
+      "Q05": "insufficient"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "remove_Q06",
+    "kind": "remove_premise",
+    "expected_statuses": {
+      "Q06": "insufficient"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "contradiction_Q01",
+    "kind": "add_contradiction",
+    "expected_statuses": {
+      "Q01": "both"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "contradiction_Q02",
+    "kind": "add_contradiction",
+    "expected_statuses": {
+      "Q02": "both"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "contradiction_Q03",
+    "kind": "add_contradiction",
+    "expected_statuses": {
+      "Q03": "both"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "contradiction_Q04",
+    "kind": "add_contradiction",
+    "expected_statuses": {
+      "Q04": "both"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "contradiction_Q05",
+    "kind": "add_contradiction",
+    "expected_statuses": {
+      "Q05": "both"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "contradiction_Q06",
+    "kind": "add_contradiction",
+    "expected_statuses": {
+      "Q06": "both"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "contradiction_Q07",
+    "kind": "add_contradiction",
+    "expected_statuses": {
+      "Q07": "both"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "contradiction_Q08",
+    "kind": "add_contradiction",
+    "expected_statuses": {
+      "Q08": "both"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "contradiction_Q09",
+    "kind": "add_contradiction",
+    "expected_statuses": {
+      "Q09": "both"
+    },
+    "human_reviewed": false
+  },
+  {
+    "scenario_id": "contradiction_Q10",
+    "kind": "add_contradiction",
+    "expected_statuses": {
+      "Q10": "both"
+    },
+    "human_reviewed": false
+  }
+]
