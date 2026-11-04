@@ -1,8 +1,8 @@
 {
   "scenario_id": "contradiction_Q10",
   "kind": "add_contradiction",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "24dccbb7fcbf728ba54a65628e9a213b45b411c61c15d7c5d8bf284de2240eaf",
   "dataset_sha256": "24dccbb7fcbf728ba54a65628e9a213b45b411c61c15d7c5d8bf284de2240eaf",
   "expected_statuses": {
     "Q10": "both"
@@ -38,5 +38,7 @@
     "claim_text": "По альтернативному серверному журналу публикация B18 произошла в 18:18:00, а не в 18:24:00."
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.190588+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }

@@ -1,8 +1,8 @@
 {
   "scenario_id": "contradiction_Q07",
   "kind": "add_contradiction",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "ac9025a3aa3cc2ee7b5af83681dd85eaa94a199bd9d0feda2d6e04bdb48d3f02",
   "dataset_sha256": "ac9025a3aa3cc2ee7b5af83681dd85eaa94a199bd9d0feda2d6e04bdb48d3f02",
   "expected_statuses": {
     "Q07": "both"
@@ -39,5 +39,7 @@
     "claim_text": "По альтернативной копии E04 восстановление S17 без личной роли publisher запрещено."
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.188037+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }

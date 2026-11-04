@@ -1,8 +1,8 @@
 {
   "scenario_id": "permutation_42",
   "kind": "permutation",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "ff0e3c2aa9da366a93e472e574db1441ec09ad8dc328fc681557f0a521f0eba1",
   "dataset_sha256": "ff0e3c2aa9da366a93e472e574db1441ec09ad8dc328fc681557f0a521f0eba1",
   "expected_statuses": {
     "Q01": "entailed",
@@ -45,5 +45,7 @@
     "D07"
   ],
   "factor": "Изменён только порядок документов; тексты, утверждения, метаданные и эталоны сохранены.",
-  "assistant_reviewed": true
+  "assistant_reviewed": true,
+  "review_source": "Проверка оператором в интерфейсе",
+  "reviewed_at": "2026-11-04T21:40:01.237411+00:00"
 }

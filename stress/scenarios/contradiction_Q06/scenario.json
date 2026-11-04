@@ -1,8 +1,8 @@
 {
   "scenario_id": "contradiction_Q06",
   "kind": "add_contradiction",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "5637f550c4eabd1e637a161424eb268208afd30556d35c10a3431ae8c42da5ed",
   "dataset_sha256": "5637f550c4eabd1e637a161424eb268208afd30556d35c10a3431ae8c42da5ed",
   "expected_statuses": {
     "Q06": "both"
@@ -37,5 +37,7 @@
     "claim_text": "По альтернативной записи та же успешная проверка лобби с S17 произошла в 18:31:00, а не в 18:29:10."
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.186922+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }

@@ -5,3 +5,5 @@ __pycache__/
 .env
 .env.*
 config/model.local.json
+.idea/
+results/

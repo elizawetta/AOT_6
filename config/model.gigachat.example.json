@@ -1,0 +1,7 @@
+{
+  "backend": "gigachat",
+  "model": "GigaChat-2-Pro",
+  "temperature": 0.0,
+  "max_output_tokens": 700,
+  "timeout_seconds": 180
+}
