@@ -1,8 +1,8 @@
 {
   "scenario_id": "contradiction_Q08",
   "kind": "add_contradiction",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "81b986bfdbe2931a1e37b3ec024a3e9b4e3b479d1bbdb33af07f83a2a1469c39",
   "dataset_sha256": "81b986bfdbe2931a1e37b3ec024a3e9b4e3b479d1bbdb33af07f83a2a1469c39",
   "expected_statuses": {
     "Q08": "both"
@@ -41,5 +41,7 @@
     "claim_text": "По альтернативной копии E04 разрешена обычная публикация B18 заданием J18 в 18:24, поставленным в очередь до заморозки."
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.188866+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }

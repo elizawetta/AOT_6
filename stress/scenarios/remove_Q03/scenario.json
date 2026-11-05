@@ -1,8 +1,8 @@
 {
   "scenario_id": "remove_Q03",
   "kind": "remove_premise",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "b8344ed25b42597c6536082c719e99e1759bfe6841a44a85ff7a887254d05b8d",
   "dataset_sha256": "b8344ed25b42597c6536082c719e99e1759bfe6841a44a85ff7a887254d05b8d",
   "expected_statuses": {
     "Q03": "insufficient"
@@ -70,5 +70,7 @@
     "gold_counterevidence_ids": []
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.179181+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }

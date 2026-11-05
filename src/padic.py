@@ -36,5 +36,5 @@ def group_claims(claims: list[Claim], metadata: dict[str, ClaimMetadata]):
         groups[metadata[claim.claim_id].path].append(claim)
     def time_key(claim):
         stamp = metadata[claim.claim_id].occurred_at
-        return stamp is None, stamp.isoformat() if stamp else '', claim.claim_id
+        return stamp is None, stamp.timestamp() if stamp else 0, claim.claim_id
     return [(path, sorted(groups[path], key=time_key)) for path in sorted(groups)]

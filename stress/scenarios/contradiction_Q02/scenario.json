@@ -1,8 +1,8 @@
 {
   "scenario_id": "contradiction_Q02",
   "kind": "add_contradiction",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "a191e7e066f5691c8ec765c6729f2cafc5615a737a73bc3b05a62c009c5108a0",
   "dataset_sha256": "a191e7e066f5691c8ec765c6729f2cafc5615a737a73bc3b05a62c009c5108a0",
   "expected_statuses": {
     "Q02": "both"
@@ -36,5 +36,7 @@
     "claim_text": "По альтернативному журналу при восстановлении S17 использован R3 вместо R2."
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.183171+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }

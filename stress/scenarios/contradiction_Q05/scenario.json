@@ -1,8 +1,8 @@
 {
   "scenario_id": "contradiction_Q05",
   "kind": "add_contradiction",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "dc8e184042f109645904724084e43bb91c6c8e495993647261d9f23f04431c1a",
   "dataset_sha256": "dc8e184042f109645904724084e43bb91c6c8e495993647261d9f23f04431c1a",
   "expected_statuses": {
     "Q05": "both"
@@ -37,5 +37,7 @@
     "claim_text": "По альтернативной истории ролей единственное назначение publisher записи mira произошло в 18:20:00, а не в 18:35:00."
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.185693+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }

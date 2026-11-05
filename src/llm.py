@@ -100,9 +100,67 @@ class MLXProcessClient:
                 self.process.kill()
                 self.process.wait(timeout=10)
 
+class GigaChatAPIClient:
+    def __init__(self, config: dict, project_root: Path):
+        from dotenv import load_dotenv
+        from gigachat import GigaChat
+
+        load_dotenv(project_root / ".env")
+
+        self.config = config
+        self.client = GigaChat(
+            model=config["model"],
+            timeout=config["timeout_seconds"]
+        )
+
+    def generate(self, system: str, user: str) -> Generation:
+        from gigachat.models import ChatCompletionRequest, ChatMessage
+
+        request = ChatCompletionRequest(
+            messages=[
+                ChatMessage(role="system", content=system),
+                ChatMessage(role="user", content=user)
+            ],
+            model_options={
+                "temperature": self.config["temperature"],
+                "max_tokens": self.config["max_output_tokens"]
+            }
+        )
+
+        start = time.perf_counter()
+        response = self.client.chat.create(request)
+        elapsed = time.perf_counter() - start
+
+        message = next(
+            msg for msg in response.messages
+            if msg.role == "assistant"
+        )
+
+        text = "".join(
+            part.text or ""
+            for part in message.content or []
+        )
+
+        if response.usage is None:
+            raise LLMUnavailable("API не вернул информацию о токенах")
+
+        return Generation(
+            raw_text=text,
+            input_tokens=response.usage.input_tokens,
+            output_tokens=response.usage.output_tokens,
+            elapsed_seconds=elapsed
+        )
+
+    def close(self):
+        self.client.close()
 
 def create_client(config_path: str | Path, project_root: str | Path):
     config = json.loads(Path(config_path).read_text())
+    if config.get('backend') == 'gigachat':
+        for key in ['model', 'temperature', 'max_output_tokens', 'timeout_seconds']:
+            if key not in config:
+                raise ValueError(f'Missing model configuration field: {key}')
+        return GigaChatAPIClient(config, Path(project_root).resolve())
     if config.get('backend') != 'mlx':
         raise ValueError('Only the configured local MLX backend is implemented')
     for key in ['model', 'revision', 'model_path', 'temperature', 'seed', 'max_output_tokens', 'max_context_tokens', 'timeout_seconds']:

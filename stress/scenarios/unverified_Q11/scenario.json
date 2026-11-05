@@ -1,8 +1,8 @@
 {
   "scenario_id": "unverified_Q11",
   "kind": "add_unverified_control",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "bd36357c73b456fc0178d38fbf5e095ded9afb8bbfa5560fb37c601a8fd9ac46",
   "dataset_sha256": "bd36357c73b456fc0178d38fbf5e095ded9afb8bbfa5560fb37c601a8fd9ac46",
   "expected_statuses": {
     "Q11": "insufficient"
@@ -35,5 +35,7 @@
     "claim_text": "Анонимный автор утверждает, что Вера хотела сорвать финал."
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.191765+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }

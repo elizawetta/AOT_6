@@ -15,7 +15,10 @@ def evaluate_record(record: dict, gold: dict, confidence_threshold: float = 0.8)
     counter = set_scores(answer['counterevidence_ids'] if answer else [], gold['gold_counterevidence_ids'])[1]
     if not answer:
         precision = recall = f1 = counter = 0.0
-    return dict(status_correct=predicted == gold['gold_status'], evidence_precision=precision, evidence_recall=recall, evidence_f1=f1, counterevidence_recall=counter if gold['gold_counterevidence_ids'] else None, both_correct=predicted == 'both' if gold['gold_status'] == 'both' else None, insufficient_correct=predicted == 'insufficient' if gold['gold_status'] == 'insufficient' else None, confident_when_insufficient=(answer['confidence'] >= confidence_threshold and predicted != 'insufficient') if answer and gold['gold_status'] == 'insufficient' else (False if gold['gold_status'] == 'insufficient' else None), input_tokens=record.get('input_tokens'), output_tokens=record.get('output_tokens'), elapsed_seconds=record.get('elapsed_seconds'), valid=bool(answer))
+    return dict(status_correct=predicted == gold['gold_status'], evidence_precision=precision, evidence_recall=recall, evidence_f1=f1, counterevidence_recall=counter if gold['gold_counterevidence_ids'] else None, both_correct=predicted == 'both' if gold['gold_status'] == 'both' else None, insufficient_correct=predicted == 'insufficient' if gold['gold_status'] == 'insufficient' else None, confident_when_insufficient=(answer['confidence'] >= confidence_threshold and predicted != 'insufficient') if answer and gold['gold_status'] == 'insufficient' else (False if gold['gold_status'] == 'insufficient' else None), input_tokens=record.get('input_tokens'), output_tokens=record.get('output_tokens'), elapsed_seconds=record.get('elapsed_seconds'), insufficient_answer_review_required=bool(
+        answer and answer['status'] == 'insufficient'
+        and isinstance(answer.get('answer'), str) and answer['answer'].strip()
+    ), valid=bool(answer))
 
 
 def summarize(records: list[dict], questions: list[dict]):

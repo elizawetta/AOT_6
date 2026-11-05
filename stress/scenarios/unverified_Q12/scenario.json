@@ -1,8 +1,8 @@
 {
   "scenario_id": "unverified_Q12",
   "kind": "add_unverified_control",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "d1249b290e84c4f6200a24ec475c4ed51f006f9107246ecbf7a72af2e71c3777",
   "dataset_sha256": "d1249b290e84c4f6200a24ec475c4ed51f006f9107246ecbf7a72af2e71c3777",
   "expected_statuses": {
     "Q12": "insufficient"
@@ -37,5 +37,7 @@
     "claim_text": "Анонимный автор пересказывает неподтверждённый слух о том, что S17 запустила Мира."
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.192577+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }

@@ -1,8 +1,8 @@
 {
   "scenario_id": "contradiction_Q01",
   "kind": "add_contradiction",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "adafccf2e46095f30186bc201cd7b0e9e9c385bd917e4d30b18bff64bea75b7f",
   "dataset_sha256": "adafccf2e46095f30186bc201cd7b0e9e9c385bd917e4d30b18bff64bea75b7f",
   "expected_statuses": {
     "Q01": "both"
@@ -36,5 +36,7 @@
     "claim_text": "Альтернативный журнал отрицает успешный вход mira в 18:10:00."
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.182167+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }

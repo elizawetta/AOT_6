@@ -1,8 +1,8 @@
 {
   "scenario_id": "contradiction_Q03",
   "kind": "add_contradiction",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "f7a733393944752b329cde5708c4b46fd32799e499f83fb35cf324f76016a403",
   "dataset_sha256": "f7a733393944752b329cde5708c4b46fd32799e499f83fb35cf324f76016a403",
   "expected_statuses": {
     "Q03": "both"
@@ -38,5 +38,7 @@
     "claim_text": "По альтернативной сверке arena_trial был доступен при проверке B18."
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.183960+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }

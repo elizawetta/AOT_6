@@ -1,8 +1,8 @@
 {
   "scenario_id": "contradiction_Q04",
   "kind": "add_contradiction",
-  "human_reviewed": false,
-  "reviewed_dataset_sha256": null,
+  "human_reviewed": true,
+  "reviewed_dataset_sha256": "d145c7ab7eef21b8052634dbd5b2efd40e54daaaef496242c8a8adb4041a60c7",
   "dataset_sha256": "d145c7ab7eef21b8052634dbd5b2efd40e54daaaef496242c8a8adb4041a60c7",
   "expected_statuses": {
     "Q04": "both"
@@ -37,5 +37,7 @@
     "claim_text": "По альтернативному журналу восстановление S17 выполнено от имени mira, а не restore_bot."
   },
   "assistant_reviewed": true,
-  "review_note": "Assistant checked logic and format; human review is not claimed"
+  "review_note": "Assistant checked logic and format; human review is not claimed",
+  "reviewed_at": "2026-11-04T22:22:35.184765+00:00",
+  "review_method": "interactive_terminal_bulk_confirmation"
 }
